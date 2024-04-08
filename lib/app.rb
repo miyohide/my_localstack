@@ -1,4 +1,4 @@
-require 'aws-sdk-s3'
+require "aws-sdk-s3"
 
 region = "us-east-1"
 bucket_name = "bucket01"
