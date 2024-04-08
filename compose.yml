@@ -11,8 +11,15 @@ services:
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
-  app:
-    build: .
-    tty: true
+  # app:
+  #   build: .
+  #   tty: true
+  #   volumes:
+  #     - .:/myapp/
+
+  awscli:
+    image: amazon/aws-cli:2.15.36
+    entrypoint: "bash"
     volumes:
-      - .:/myapp/
+      - "./.aws:/root/.aws"
+    tty: true
