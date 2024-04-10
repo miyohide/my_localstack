@@ -22,4 +22,5 @@ services:
     entrypoint: "bash"
     volumes:
       - "./.aws:/root/.aws"
+      - "./resources:/aws/resources/"
     tty: true
